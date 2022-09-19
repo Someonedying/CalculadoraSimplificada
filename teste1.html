@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calculadora Simplificada</title>
+<br><h1 align="center"><font color="000ade"><u>Opções de Calculadoras</u></h1>
+<style>
+	
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #ddd;
+	font-family: 'montserrat';
+}
+
+
+.nav_tabs{
+	width: 750px;
+	height: 550px;
+	margin: 100px auto;
+	background-color: #fff;
+	position: relative;
+}
+
+.nav_tabs ul{
+	list-style: none;
+}
+
+.nav_tabs ul li{
+	float: left;
+}
+
+.nav_tabs label{
+	width: 100px;
+	padding: 25px;
+	background-color: #363b48;
+	display: block;
+	color: #fff;
+	cursor: pointer;
+	text-align: center;
+}
+
+.rd_tabs:checked ~ label{
+	background-color: #6482f4;
+}
+
+.rd_tabs{
+	display: none;
+}
+
+.content{
+	border-top: 5px solid #6482f4;
+	background-color: #fff;
+	display: none;
+	position: absolute;
+	height: 320px;
+	width: 750px;
+	left: 0;
+}
+
+.rd_tabs:checked ~ .content{
+	display: block;
+}
+</style>
+</head>
+<body>
+	<nav class="nav_tabs">
+<ul>
+	<li>
+		<input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
+		<label for ="tab1">Operações e Razões Trig.</label>
+		<div class="content">
+			<article align="center"><font color="#000000"><br>Calculadora de operações básicas e cálculo de razões trigonométricas (Seno, Cosseno e Tangente).</font></article><br><article align="center"><img src="tabelasencostan.png" width="300px" height="250px"></article><article align="center"><br><br><a href="operacoes.html"><img src="botão de acesso.jpg" width="100px" height="50px"></a>
+			</article>
+			
+		</div>
+	</li>
+	<li>
+		<input type="radio" name="tabs" class="rd_tabs" id="tab2">
+		<label for ="tab2">Cálculo do Índice de Massa</label>
+		<div class="content">
+			<article align="center"><font color="#000000"><br>Calculadora do IMC (Índice de Massa Corporal) com diagnóstico incluso.</font></article><br><article align="center"><img src="tabelaimc.png" width="400px" height="250px"></article><article align="center"><br><br><a href="imc.htm"><img src="botão de acesso.jpg" width="100px" height="50px"></a>
+			</article>
+		</div>
+	</li>
+	<li>
+		<input type="radio" name="tabs" class="rd_tabs" id="tab3">
+		<label for ="tab3">Cálculo de Eq. de 2° Grau</label>
+		<div class="content">
+		<article align="center"><font color="#000000"><br>Calculadora de equações do 2° grau com passo a passo da resolução.</font></article><br><article align="center"><img src="formulasequacao.jpg" width="350px" height="200px"></article><article align="center"><br><br><a href="equacao2grau.htm"><img src="botão de acesso.jpg" width="100px" height="50px"></a>
+			</article>
+		</div>
+	</li>
+	<li>
+		<input type="radio" name="tabs" class="rd_tabs" id="tab4">
+		<label for ="tab4">Conversor de Diversas Medidas</label>
+		<div class="content">
+		<article align="center"><font color="#000000"><br>Calculadora de conversão de medidas como; tempo, temperatura, velocidade e etc.</font></article><br><br><article align="center">
+<font color="000000">
+	Bit (b): é a unidade de informação que pode ser armazenada ou transmitida.<br>
+	Metro (m): é a unidade de medida de comprimento.<br>
+    Quilograma (kg): é a unidade de medida de massa.<br>
+    Segundo (s): é a unidade de medida de tempo.<br>
+    Kelvin (K): é a unidade de medida de temperatura.<br>
+</font>
+</article><br><article align="center"><br><br><a href="conversor.html"><img src="botão de acesso.jpg" width="100px" height="50px"></a>
+			</article>
+		</div>
+	</li>
+	<li>
+		<input type="radio" name="tabs" class="rd_tabs" id="tab5">
+		<label for ="tab5">Calculadora de Frações Simples</label>
+		<div class="content">
+			<article align="center"><font color="#000000"><br>Calculadora de operações envolvendo frações.</font></article><br><article align="center"><img src="fracoes.png" width="300px" height="200px"></article><article align="center"><br><br><a href="calculadoradefracoes.htm"><img src="botão de acesso.jpg" width="100px" height="50px"></a>
+			</article>
+		</div>
+	</li>
+</ul>
+	</nav>	
+</body>
+</html>

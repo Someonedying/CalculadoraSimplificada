@@ -1,0 +1,201 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="pt-br">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Cálculo de Trinômio Quadrado Perfeito</title>
+</head>
+<Script Language="JavaScript">
+<!--
+
+ /* Script de cálculo de equação de segundo grau */
+ /* Desenvolvido por: Mario Bruno Morais Aliste  */
+ /*         mario_bruno@zipmail.com.br           */
+ 
+ function Calcula() {
+ var x_quadrado, x_b, c, a, b, c, Delta, b_quadrado, quatro, quatro_sinal, raiz, b_delta, b_delta2;   
+ a = parseInt(document.Formulario.a.value);
+ b = parseInt(document.Formulario.b.value);
+ c = parseInt(document.Formulario.c.value); 
+ Sinal0 = document.Formulario.Sinal0.value;
+ Sinal1 = document.Formulario.Sinal1.value;
+ Sinal2 = document.Formulario.Sinal2.value;  
+ /* Verifica primeiro se os campos não estão em branco */
+ if(document.Formulario.a.value == '0' || document.Formulario.b.value == '0' || document.Formulario.c.value == '0') {
+  alert('Digite números inteiros maiores ou menores que 0!'); }
+ else {
+  if(document.Formulario.a.value == '' || document.Formulario.b.value == '' || document.Formulario.c.value == '') {
+   alert('Complete todos os campos!'); }
+  else {
+   /* Calcula o x² e verifica os sinais */ 
+    switch (Sinal0) {
+     case '+' : x_quadrado = Math.pow(a,2);  break;
+     case '-' : x_quadrado = Math.pow((a * -1),2); break;
+    }    
+   /* Estabelece o sinal do a */ 
+    switch (Sinal0) {
+     case '-' : a = (a * -1); break;
+    }
+   /* Estabelece o sinal do b */ 
+    switch (Sinal1) {
+     case '-' : b = (b * -1); break;
+    }
+   /* Estabelece o sinal do bx */ 
+    switch (Sinal1) {
+     case '-' : x_b = (b * -1); break;
+    }
+   /* Estabelece o sinal do c */ 
+    switch (Sinal2) {
+     case '-' : c = (c * -1); break;
+    }
+   /* Calcula o b_quadrado */ 
+    switch (Sinal1) {
+     case '+' : b_quadrado = Math.pow(b,2);  break;
+     case '-' : b_quadrado = Math.pow((b * -1),2); break;
+    }    
+   /* Calcula o 4 */ 
+    quatro = (- 4 * a * c);
+   /* 1 */ 
+    document.write('<br><center>');
+    if(a > 0) {
+     document.write(Sinal0 + ' ' + a + 'x² ');
+    }
+    else {
+     document.write(a + 'x² ');    
+    }
+    if(b > 0) {
+     document.write(Sinal1 + ' ' + b + 'x ');
+    }
+    else {
+     document.write(b + ' x ');    
+    }
+    if(c > 0) {
+     document.write(Sinal2 + ' ' + c + ' = 0');
+    }
+    else {
+     document.write(c + ' = 0');    
+    }
+   /* 2 */ 
+    document.write('<br>'); 
+    document.write('&#8710; = b² - 4.a.c');
+   /* 3 */ 
+    document.write('<br>'); 
+    document.write('&#8710; = ' + b_quadrado + ' - 4.' + a + '.' + c);
+   /* 4 */ 
+    document.write('<br>');     
+    if(quatro > 0) {
+     quatro_sinal = '+'; 
+     document.write('&#8710; = ' + b_quadrado + ' ' + quatro_sinal + ' ' + quatro);
+    }
+    else {
+     document.write('&#8710; = ' + b_quadrado + quatro);
+    }
+   /* 5 */ 
+    document.write('<br>'); 
+     if(quatro > 0) {     
+      Delta = b_quadrado + quatro;
+      document.write('&#8710; = ' + Delta);
+     }
+     if(quatro < 0) {
+      Delta = b_quadrado + quatro;
+      document.write('&#8710; = ' + Delta); 
+     }
+   /* Calcula a raiz quadrada do delta */ 
+    raiz = Math.sqrt(Delta);
+   /* Calcula o - b + raiz de delta */
+    if(b < 0) { 
+     b_delta = ((-b * -1) + raiz);
+    }
+    else {
+     b_delta = (b + raiz);
+    } 
+   /* Calcula o - b - raiz de delta */ 
+    if(b < 0) { 
+     b_delta2 = ((-b * -1) - raiz);
+    }
+    else {
+     b_delta2 = (b - raiz);
+    } 
+   /* Condição de raizes */ 
+    document.write('<br>'); 
+     if(Delta < 0) {     
+      document.write('Não existem raízes nesta equação, pois o Delta é inferior a 0!');
+     }
+     if(Delta == 0) { 
+      /* Unica raiz */
+      document.write('<br>');
+      document.write('x= - b + &#8730;&#8710; / 2.a');
+      document.write('<br>');
+       if(b < 0) {
+        document.write('x= ' + (b * -1) + ' + &#8730;' + raiz + ' / ' + 2 * a);
+       }
+       else {
+        document.write('x= ' + b + ' + &#8730;' + raiz + ' / ' + 2 * a);	 
+       }		
+      document.write('<br>');
+      document.write('x`= ' + b_delta + ' / ' + 2 * a);
+      document.write('<br>');
+      document.write('x`= ' + (b_delta / 2 * a)); 
+      document.write('<br><br>');
+      document.write('Como temos raiz do delta = 0 as duas raízes desta equação são iguais!');
+      }
+      if(Delta > 0) {
+      /* Primeira Raiz */
+      document.write('<br>');
+      document.write('x`= - b + &#8730;&#8710; / 2.a');
+      document.write('<br>');
+       if(b < 0) {
+        document.write('x= ' + (b * -1) + ' + &#8730;' + raiz + ' / ' + 2 * a);
+       }
+       else {
+        document.write('x= ' + b + ' + &#8730;' + raiz + ' / ' + 2 * a);	 
+       }		
+      document.write('<br>');
+      document.write('x`= ' + b_delta + ' / ' + 2 * a);
+      document.write('<br>');
+      document.write('x`= ' + (b_delta / 2 * a));
+      /* Segunda Raiz */
+      document.write('<br>');
+      document.write('x``= - b - &#8730;&#8710; / 2.a');
+      document.write('<br>');
+       if(b < 0) {
+        document.write('x``= ' + (b * -1) + ' - &#8730;' + raiz + ' / ' + 2 * a);
+       }
+       else {
+        document.write('x``= ' + b + ' - &#8730;' + raiz + ' / ' + 2 * a);	 
+       }		
+      document.write('<br>');
+      document.write('x``= ' + b_delta2 + ' / ' + 2 * a);
+      document.write('<br>');
+      document.write('x``= ' + (b_delta2 / 2 * a));
+     } 	      
+    }
+   }
+  }  
+//-->
+</Script>
+<body>
+<hr>
+<p align="center"><font face="verdana" color="0002f4" size="4">Cálculo de Trinômio Quadrado Perfeito:</font></p>
+<form name="Formulario">
+  <p align="center">
+  <font face="verdana">
+  <select size="1" name="Sinal0">
+  <option selected value="+">+</option>
+  <option value="-">-</option>
+  </select><input type="text" name="a" size="1"><font size="2">x²&nbsp; </font> <select size="1" name="Sinal1">
+  <option selected value="+">+</option>
+  <option value="-">-</option>
+  </select><input type="text" name="b" size="1"><font size="2">x&nbsp; </font>
+  <select size="1" name="Sinal2">
+  <option selected value="+">+</option>
+  <option value="-">-</option>
+  </select><input type="text" name="c" size="1"><font size="2"> = 0</font><i><b><font size="2" color="#000000"><BR></font>
+  <p align="center">
+  <button name="Calcular" onclick="Calcula()"><font face="verdana">Calcular</font></button>
+  <font face="verdana">&nbsp;<input type="reset" value="Limpar" name="Limpar" style="font-family: verdana"></font></p>
+</form>
+<br><pre><a href="teste1.html"><font color="ffffff">    <img src="botão de voltar.jpg" width="80px" height="40px"></a></pre>
+</body>
+</html>
